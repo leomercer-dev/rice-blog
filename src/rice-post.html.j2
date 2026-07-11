@@ -1,0 +1,49 @@
+{% set page_title = rice.title %}
+{% include "header.html" %}
+    {% set page_desc = rice.summary | default('A desktop rice by Leo Mercer.') %}
+
+    <section class="container">
+        <nav style="padding-top: 2rem; font-size: 0.8rem; color: var(--overlay0); margin-bottom: 1.5rem;">
+            <a href="/rice.html" style="color: var(--overlay0) !important;">Rices</a> /
+            <span style="color: var(--text);">{{ rice.title }}</span>
+        </nav>
+
+        {% if rice.gallery and rice.gallery[0] %}
+        <div class="rice-hero">
+            <img src="/assets/img/rice/{{ rice.gallery[0] }}" alt="{{ rice.title }} screenshot">
+        </div>
+        {% endif %}
+
+        <h1 style="font-size: clamp(1.6rem, 4vw, 2.5rem); font-weight: 800; color: var(--text); margin-bottom: 0.5rem;">{{ rice.title }}</h1>
+        <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom: 0.5rem; font-size: 0.82rem; color: var(--subtext0);">
+            <span>{{ rice.date }}</span>
+            {% if rice.status == 'draft' %}<span class="tag" style="background:rgba(243,139,168,0.15); color:var(--red);">DRAFT</span>{% endif %}
+        </div>
+        <p style="color: var(--subtext1); font-size: 0.95rem; max-width: 700px; line-height: 1.8;">{{ rice.summary }}</p>
+
+        <div class="rice-details">
+            {% for field in [['OS', rice.os], ['Shell', rice.shell], ['Resolution', rice.resolution], ['GPU', rice.gpu], ['Theme', rice.theme], ['Icons', rice.icons], ['Cursor', rice.cursor], ['Terminal', rice.terminal], ['Font', rice.font], ['Wallpaper', rice.wallpaper], ['Prompt', rice.prompt], ['Launcher', rice.launcher]] %}
+            <div class="detail-item"><span class="detail-label">{{ field[0] }}</span><span class="detail-value">{{ field[1] | default('N/A') }}</span></div>
+            {% endfor %}
+        </div>
+
+        {% if rice.highlights %}
+        <h2 style="font-size: 1.3rem; color: var(--text); margin-bottom: 1rem;">What Makes This Rice</h2>
+        <ul class="rice-highlights">
+            {% for h in rice.highlights %}<li>{{ h }}</li>{% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if rice.gallery and rice.gallery | length > 1 %}
+        <h2 style="font-size: 1.3rem; color: var(--text); margin-bottom: 1rem;">Gallery</h2>
+        <div class="rice-gallery">
+            {% for img in rice.gallery[1:] %}<img src="/assets/img/rice/{{ img }}" alt="{{ rice.title }} screenshot">{% endfor %}
+        </div>
+        {% endif %}
+
+        <div style="margin-top: 2rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            {% for tag in rice.tags %}<span class="tag tag-{{ ['blue','mauve','green','teal','yellow','red'][loop.index0 % 6] }}">{{ tag }}</span>{% endfor %}
+        </div>
+    </section>
+
+{% include "footer.html" %}

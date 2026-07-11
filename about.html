@@ -1,0 +1,70 @@
+{% set page_title = "About" %}
+{% include "header.html" %}
+    {% set page_desc = "About the author, philosophy, and tech stack." %}
+    
+    <section class="container">
+        <div class="about-layout">
+            <!-- Main Content -->
+            <div class="about-content">
+                <h2>Who Am I?</h2>
+                <p>I go by Leo Mercer. I build things that run on Linux, customize the graphical environments I spend most of my day in, and write about the process when it's interesting enough.</p>
+                <p>This site is both a portfolio and a public notebook — documenting every desktop rice, every technical experiment, every time I spent six hours making a terminal prompt look better because that's what matters to me.</p>
+                
+                <h2>Philosophy</h2>
+                <p>Desktop ricing isn't vanity. It's the practice of owning your computing environment at the pixel level. Every color choice, every spacing decision, every custom script is a statement about how you want to interact with your machine.</p>
+                <p>I believe in minimal external dependencies — no frameworks, no CDNs, no analytics trackers on my site. The tools I use should be transparent, local-first, and under my control. This blog reflects that: pure HTML/CSS/JS, built locally, deployed to GitHub Pages.</p>
+                
+                <h2>Why This Blog?</h2>
+                <p>I've spent months ricing a Pop!_OS desktop with Catppuccin Mauve colors, Polybar, Conky, and patched GNOME Shell CSS. I want to document the process — the failures, the breakthroughs, the config files that finally worked. This blog is the archive.</p>
+                <p>It's also meant to be useful to others: if you're trying to figure out how to patch Catppuccin shell CSS for a translucent panel, or configure btop with custom themes, or get Polybar running on X11 — the answers are here.</p>
+
+                <h2>Contact</h2>
+                <p>If you want to reach me: I'm available through the usual channels. GitHub, email, wherever people who care about this stuff tend to congregate.</p>
+            </div>
+            
+            <!-- Sidebar -->
+            <aside class="about-sidebar">
+                <div class="sidebar-card">
+                    <h3>Quick Facts</h3>
+                    <ul class="stack-list">
+                        <li><span class="stack-label">Location</span><span class="stack-value">Linux</span></li>
+                        <li><span class="stack-label">Current OS</span><span class="stack-value">Pop!_OS 22.04</span></li>
+                        <li><span class="stack-label">Shell</span><span class="stack-value">GNOME 42.9 / X11</span></li>
+                        <li><span class="stack-label">Monitor</span><span class="stack-value">2560×1600 16:10</span></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Tech Stack</h3>
+                    <ul class="stack-list">
+                        <li><span class="stack-label">Web</span><span class="stack-value">HTML/CSS/JS</span></li>
+                        <li><span class="stack-label">Build</span><span class="stack-value">Python + Jinja2</span></li>
+                        <li><span class="stack-label">Hosting</span><span class="stack-value">GitHub Pages</span></li>
+                        <li><span class="stack-label">Git</span><span class="stack-value">CLI</span></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Current Rice</h3>
+                    <ul class="stack-list">
+                        <li><span class="stack-label">Theme</span><span class="stack-value">Catppuccin Mauve</span></li>
+                        <li><span class="stack-label">Icons</span><span class="stack-value">Papirus-Dark</span></li>
+                        <li><span class="stack-label">Cursor</span><span class="stack-value">Bibata Modern Ice</span></li>
+                        <li><span class="stack-label">Terminal</span><span class="stack-value">Alacritty</span></li>
+                        <li><span class="stack-label">Prompt</span><span class="stack-value">Starship</span></li>
+                        <li><span class="stack-label">Top Bar</span><span class="stack-value">Polybar</span></li>
+                        <li><span class="stack-label">Widgets</span><span class="stack-value">Conky</span></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Links</h3>
+                    <ul style="list-style: none; font-size: 0.85rem;">
+                        <li style="padding: 0.3rem 0;"><a href="https://github.com/leo" style="color: var(--blue) !important;">GitHub →</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+{% include "footer.html" %}

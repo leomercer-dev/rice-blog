@@ -1,0 +1,34 @@
+{% set page_title = "All Rices" %}
+{% include "header.html" %}
+    {% set page_desc = "Complete gallery of desktop ricing setups." %}
+    
+    <section class="container">
+        <div class="section-header">
+            <h2>All <span class="accent">Rices</span></h2>
+            <p>{{ rices|length }} setups in the archive.</p>
+        </div>
+        
+        <div class="rice-grid">
+            {% for rice in rices %}
+            <article class="rice-card animate-in" style="{{ 'opacity:0.6' if rice.status == 'draft' else '' }}">
+                {% if rice.gallery and rice.gallery[0] %}
+                <img src="/assets/img/rice/{{ rice.gallery[0] }}" alt="{{ rice.title }} screenshot" class="rice-card-img">
+                {% else %}
+                <div class="rice-card-img" style="background:var(--surface0); display:flex; align-items:center; justify-content:center; color:var(--overlay0); font-size:2rem;">📷</div>
+                {% endif %}
+                <div class="rice-card-body">
+                    <h3 class="rice-card-title">{{ rice.title }}{% if rice.status == 'draft' %} <span class="tag" style="margin-left:0.5rem;">DRAFT</span>{% endif %}</h3>
+                    <div class="rice-card-os">{{ rice.os }} · {{ rice.resolution }} · {{ rice.date }}</div>
+                    <p class="rice-card-summary">{{ rice.summary }}</p>
+                    <div class="rice-card-tags">
+                        {% for tag in rice.tags[:4] %}
+                        <span class="tag tag-{{ ['blue','mauve','green','teal','yellow','red'][loop.index0 % 6] }}">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+
+{% include "footer.html" %}

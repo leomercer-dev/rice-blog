@@ -1,0 +1,66 @@
+{% set page_title = "Home" %}
+{% include "header.html" %}
+    {% set page_desc = "Desktop ricing portfolio, technical blog, and dotfiles showcase." %}
+    
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Customizing the<br><span class="accent">pixels that live on my screen</span></h1>
+            <p>Pop!_OS, Catppuccin Mauve, Polybar, Alacritty — a desktop built to look as good as it works. Blog posts about the process, the tools, and why I keep doing this.</p>
+            <div class="hero-cta">
+                <a href="/rice.html" class="btn btn-primary">Browse Rices →</a>
+                <a href="/posts.html" class="btn btn-secondary">Read Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Rices -->
+    <section class="container">
+        <div class="section-header">
+            <h2>Featured <span class="accent">Rices</span></h2>
+            <p>Desktop setups, documented and versioned.</p>
+        </div>
+        
+        <div class="rice-grid">
+            {% for rice in rices if rice.featured %}
+            <article class="rice-card animate-in">
+                {% if rice.gallery and rice.gallery[0] %}
+                <img src="/assets/img/rice/{{ rice.gallery[0] }}" alt="{{ rice.title }} screenshot" class="rice-card-img">
+                {% endif %}
+                <div class="rice-card-body">
+                    <h3 class="rice-card-title"><a href="/rice-{{ rice.id }}.html">{{ rice.title }}</a></h3>
+                    <div class="rice-card-os">{{ rice.os }} · {{ rice.resolution }}</div>
+                    <p class="rice-card-summary">{{ rice.summary }}</p>
+                    <div class="rice-card-tags">
+                        {% for tag in rice.tags[:4] %}
+                        <span class="tag tag-{{ ['blue','mauve','green','teal','yellow','red'][loop.index0 % 6] }}">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    <a href="/rice-{{ rice.id }}.html" class="rice-card-link">View Details →</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+
+    <!-- Recent Posts -->
+    <section class="container">
+        <div class="section-header">
+            <h2>Latest <span class="accent">Posts</span></h2>
+            <p>Build logs, technical deep-dives, and the occasional hot take.</p>
+        </div>
+        
+        <div class="post-list">
+            {% for post in posts[:3] if not post.draft %}
+            <article class="post-card animate-in">
+                <span class="post-card-date">{{ post.date }}</span>
+                <div>
+                    <h3><a href="/posts-{{ post.id }}.html">{{ post.title }}</a></h3>
+                    <p class="post-card-excerpt">{{ post.excerpt }}</p>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+
+{% include "footer.html" %}

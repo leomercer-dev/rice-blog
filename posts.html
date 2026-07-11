@@ -1,0 +1,29 @@
+{% set page_title = "Blog Posts" %}
+{% include "header.html" %}
+    {% set page_desc = "Technical blog about Linux desktop customization, static site building, and dotfiles." %}
+    
+    <section class="container">
+        <div class="section-header">
+            <h2>Blog <span class="accent">Posts</span></h2>
+            <p>{{ posts|length }} articles. {% for p in posts if not p.draft %}{% endfor %}</p>
+        </div>
+        
+        <div class="post-list">
+            {% for post in posts|sort(attribute='date', reverse=true) if not post.draft %}
+            <article class="post-card animate-in" style="animation-delay: {{ loop.index * 0.05 }}s;">
+                <span class="post-card-date">{{ post.date }}</span>
+                <div>
+                    <h3><a href="/posts-{{ post.id }}.html">{{ post.title }}</a></h3>
+                    <p class="post-card-excerpt">{{ post.excerpt }}</p>
+                    <div style="display:flex; gap:0.4rem; margin-top:0.5rem;">
+                        {% for tag in post.tags[:3] %}
+                        <span class="tag tag-{{ ['blue','mauve','green','teal'][loop.index0 % 4] }}">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+
+{% include "footer.html" %}
