@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building a Static Site From Scratch — No Frameworks, No Compromise — Rice Blog</title>
+    <meta name="description" content="Desktop ricing portfolio and technical blog.">
+    <meta name="author" content="Leo Mercer">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Building a Static Site From Scratch — No Frameworks, No Compromise — Rice Blog">
+    <meta property="og:description" content="Desktop ricing portfolio and technical blog.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/img/og-cover.png">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍙</text></svg>">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- JetBrains Mono from local (self-hosted, zero external deps) -->
+    <style>
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: local('JetBrains Mono'), local('JetBrainsMono');
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">rice.dev</a>
+        
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        
+        <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/rice.html">Rices</a></li>
+            <li><a href="/posts.html">Posts</a></li>
+            <li><a href="/about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+    
+    
+    <section class="container">
+        <!-- Breadcrumb -->
+        <nav style="padding-top: 2rem; font-size: 0.8rem; color: var(--overlay0); margin-bottom: 1rem;">
+            <a href="/posts.html" style="color: var(--overlay0) !important;">Blog</a> / 
+            <span style="color: var(--text);">Building a Static Site From Scratch — No Frameworks, No Compromise</span>
+        </nav>
+
+        <!-- Post Header -->
+        <article>
+            <h1 style="font-size: clamp(1.6rem, 4vw, 2.5rem); font-weight: 800; color: var(--text); margin-bottom: 0.5rem;">Building a Static Site From Scratch — No Frameworks, No Compromise</h1>
+            <div style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap; margin-bottom: 2rem; font-size: 0.82rem; color: var(--subtext0);">
+                <span>2026-07-11</span>
+                
+                <span class="tag tag-blue">webdev</span>
+                
+                <span class="tag tag-mauve">static-sites</span>
+                
+                <span class="tag tag-green">html-css-javascript</span>
+                
+            </div>
+
+            <!-- Post Content (injected by build script) -->
+            <div style="max-width: 720px;">
+                &lt;h1&gt;Building a Static Site From Scratch — No Frameworks, No Compromise&lt;/h1&gt;
+&lt;p&gt;Every framework I&#39;ve used for static sites has felt like putting a suit on a ghost. They generate the right HTML but miss what makes a site feel alive: the spacing between lines, the way color choices shape mood, the feeling of reading something that was written by someone who actually cares about it.&lt;/p&gt;
+&lt;p&gt;So I built my own. No React, no Next.js, no Tailwind CDN, no analytics scripts, no Google Fonts, no framework bloat. Just HTML, CSS, and JavaScript — the same three technologies the web was built on in 1995.&lt;/p&gt;
+&lt;h2&gt;Why This Matters&lt;/h2&gt;
+&lt;p&gt;This isn&#39;t about Luddism or performance punk aesthetics. It&#39;s about **control**. Every dependency I don&#39;t install is a potential break point, a security vulnerability, a tracking pixel, a loading cost. When your site is three files and you wrote every line of CSS yourself, you know exactly what it does and why.&lt;/p&gt;
+&lt;h2&gt;The Stack (Yes, This Is A Stack)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;HTML&lt;/strong&gt; — The content. Semantically structured. No div soup.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CSS&lt;/strong&gt; — Custom properties for theming, CSS Grid for layout, &lt;code&gt;clamp()&lt;/code&gt; for responsive typography, custom scrollbar styling. Every animation is a &lt;code&gt;transition&lt;/code&gt; on an existing property. No keyframe spam.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;JavaScript&lt;/strong&gt; — 200 lines total. Mobile menu toggle, lightbox for image galleries, back-to-top button, theme toggle with localStorage persistence. That&#39;s it.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Python + Jinja2&lt;/strong&gt; — Build system. Templates handle the repeated structure (headers, footers, navigation), data lives in YAML files so I can add new rices without touching HTML.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GitHub Pages&lt;/strong&gt; — Hosting. Custom domain, free HTTPS via Let&#39;s Encrypt, automatic CDN delivery. The infrastructure of a Fortune 500 site for $0/month.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Design Decisions&lt;/h2&gt;
+&lt;h3&gt;Dark by Default&lt;/h3&gt;
+&lt;p&gt;This is a site about desktop customization. Dark mode isn&#39;t an option here — it&#39;s the default state. Light mode exists as a toggle (CSS class swap on &lt;code&gt;&lt;html&gt;&lt;/code&gt;, persisted in localStorage). The entire palette comes from Catppuccin Mocha Mauve because that&#39;s what I&#39;m using on my screen right now, and consistency matters more than neutrality.&lt;/p&gt;
+&lt;h3&gt;No External Dependencies&lt;/h3&gt;
+&lt;p&gt;No Google Fonts (JetBrains Mono is already installed on this machine, the browser falls back to local), no CDN-hosted libraries, no analytics trackers. If it loads from somewhere else, it doesn&#39;t exist in my site.&lt;/p&gt;
+&lt;h3&gt;Performance Targets&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;First contentful paint under 0.8s on a typical connection&lt;/li&gt;
+&lt;li&gt;Total page weight under 200KB (excluding screenshots)&lt;/li&gt;
+&lt;li&gt;Lighthouse score of 95+ on all metrics — not because I care about the badge, but because those numbers correlate with things that actually matter: no render-blocking resources, optimized images, minimal JavaScript&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;What&#39;s Next&lt;/h2&gt;
+&lt;p&gt;This is version 0.1. The architecture supports adding RSS feeds (client-side XML generation via GitHub Actions), a comment system via Giscus (GitHub Discussions-based, zero server needed), search (Lunr.js client-side indexing), and expanding the rice documentation to include dotfile repositories. But all of that comes after the foundation is solid.&lt;/p&gt;
+&lt;p&gt;The code for this site lives in &lt;code&gt;~/.hermes/cache/delegation/rice-blog/&lt;/code&gt;. I&#39;ll push it to GitHub when I&#39;m done iterating.&lt;/p&gt;
+&lt;h2&gt;TL;DR&lt;/h2&gt;
+&lt;p&gt;Static sites don&#39;t need static-site generators. They need a designer with taste and someone who knows how HTML works. This is proof of that.&lt;/p&gt;
+            </div>
+        </article>
+
+        <!-- Back to posts -->
+        <a href="/posts.html" style="display:inline-flex; align-items:center; gap:0.3rem; margin-top: 3rem; font-size: 0.85rem; color: var(--blue) !important;">← Back to all posts</a>
+    </section>
+
+   </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Built with zero frameworks. Powered by HTML, CSS & stubbornness.</p>
+            <p style="margin-top: 0.4rem;">© 2026 — Leo Mercer</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Full resolution screenshot">
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" id="back-to-top" style="opacity:0; pointer-events:none; position:fixed; bottom:2rem; right:2rem; width:40px; height:40px; background:var(--mauve); color:var(--crust); border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:1.2rem; box-shadow:0 4px 16px rgba(203,166,247,0.3); transition:all 0.2s;" title="Back to top">↑</a>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" style="position:fixed; bottom:2rem; right:5rem; width:40px; height:40px; background:var(--mantle); color:var(--text); border:1px solid var(--surface0); border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1.1rem; transition:all 0.2s;" title="Toggle theme">☀</button>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
