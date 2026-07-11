@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Rices — Rice Blog</title>
+    <meta name="description" content="Desktop ricing portfolio and technical blog.">
+    <meta name="author" content="Leo Mercer">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="All Rices — Rice Blog">
+    <meta property="og:description" content="Desktop ricing portfolio and technical blog.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/img/og-cover.png">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍙</text></svg>">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- JetBrains Mono from local (self-hosted, zero external deps) -->
+    <style>
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: local('JetBrains Mono'), local('JetBrainsMono');
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">rice.dev</a>
+        
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        
+        <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/rice.html">Rices</a></li>
+            <li><a href="/posts.html">Posts</a></li>
+            <li><a href="/about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+    
+    
+    <section class="container">
+        <div class="section-header">
+            <h2>All <span class="accent">Rices</span></h2>
+            <p>2 setups in the archive.</p>
+        </div>
+        
+        <div class="rice-grid">
+            
+            <article class="rice-card animate-in" style="opacity:0.6">
+                
+                <div class="rice-card-img" style="background:var(--surface0); display:flex; align-items:center; justify-content:center; color:var(--overlay0); font-size:2rem;">📷</div>
+                
+                <div class="rice-card-body">
+                    <h3 class="rice-card-title">Coming Soon — Next Rice <span class="tag" style="margin-left:0.5rem;">DRAFT</span></h3>
+                    <div class="rice-card-os">TBD · TBD · 2026-08-01</div>
+                    <p class="rice-card-summary">Next desktop experiment in progress.</p>
+                    <div class="rice-card-tags">
+                        
+                        <span class="tag tag-blue">wip</span>
+                        
+                    </div>
+                </div>
+            </article>
+            
+            <article class="rice-card animate-in" style="">
+                
+                <img src="/assets/img/rice/screenshot-01.png" alt="Pop!_OS — Catppuccin Mocha Mauve screenshot" class="rice-card-img">
+                
+                <div class="rice-card-body">
+                    <h3 class="rice-card-title">Pop!_OS — Catppuccin Mocha Mauve</h3>
+                    <div class="rice-card-os">Pop!_OS 22.04 LTS · 2560×1600 · 2026-07-11</div>
+                    <p class="rice-card-summary">A cohesive Catppuccin Mocha Mauve rice on Pop!_OS featuring a translucent Polybar top bar, Conky desktop widgets, patched GNOME Shell CSS for panel transparency, and a Makoto Shinkai-inspired cityscape wallpaper.</p>
+                    <div class="rice-card-tags">
+                        
+                        <span class="tag tag-blue">gnome</span>
+                        
+                        <span class="tag tag-mauve">catppuccin</span>
+                        
+                        <span class="tag tag-green">mauve</span>
+                        
+                        <span class="tag tag-teal">polybar</span>
+                        
+                    </div>
+                </div>
+            </article>
+            
+        </div>
+    </section>
+
+   </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Built with zero frameworks. Powered by HTML, CSS & stubbornness.</p>
+            <p style="margin-top: 0.4rem;">© 2026 — Leo Mercer</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Full resolution screenshot">
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" id="back-to-top" style="opacity:0; pointer-events:none; position:fixed; bottom:2rem; right:2rem; width:40px; height:40px; background:var(--mauve); color:var(--crust); border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:1.2rem; box-shadow:0 4px 16px rgba(203,166,247,0.3); transition:all 0.2s;" title="Back to top">↑</a>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" style="position:fixed; bottom:2rem; right:5rem; width:40px; height:40px; background:var(--mantle); color:var(--text); border:1px solid var(--surface0); border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1.1rem; transition:all 0.2s;" title="Toggle theme">☀</button>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

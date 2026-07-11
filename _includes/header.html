@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title or "Home" }} — Rice Blog</title>
+    <meta name="description" content="{{ page_desc | default('Desktop ricing portfolio and technical blog.') }}">
+    <meta name="author" content="Leo Mercer">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ page_title or "Home" }} — Rice Blog">
+    <meta property="og:description" content="{{ page_desc | default('Desktop ricing portfolio and technical blog.') }}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/img/og-cover.png">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍙</text></svg>">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- JetBrains Mono from local (self-hosted, zero external deps) -->
+    <style>
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: local('JetBrains Mono'), local('JetBrainsMono');
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">rice.dev</a>
+        
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        
+        <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/rice.html">Rices</a></li>
+            <li><a href="/posts.html">Posts</a></li>
+            <li><a href="/about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">

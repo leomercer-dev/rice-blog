@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home — Rice Blog</title>
+    <meta name="description" content="Desktop ricing portfolio and technical blog.">
+    <meta name="author" content="Leo Mercer">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Home — Rice Blog">
+    <meta property="og:description" content="Desktop ricing portfolio and technical blog.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/img/og-cover.png">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍙</text></svg>">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    
+    <!-- JetBrains Mono from local (self-hosted, zero external deps) -->
+    <style>
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: local('JetBrains Mono'), local('JetBrainsMono');
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="/" class="navbar-brand">rice.dev</a>
+        
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        
+        <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/rice.html">Rices</a></li>
+            <li><a href="/posts.html">Posts</a></li>
+            <li><a href="/about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main">
+    
+    
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Customizing the<br><span class="accent">pixels that live on my screen</span></h1>
+            <p>Pop!_OS, Catppuccin Mauve, Polybar, Alacritty — a desktop built to look as good as it works. Blog posts about the process, the tools, and why I keep doing this.</p>
+            <div class="hero-cta">
+                <a href="/rice.html" class="btn btn-primary">Browse Rices →</a>
+                <a href="/posts.html" class="btn btn-secondary">Read Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Rices -->
+    <section class="container">
+        <div class="section-header">
+            <h2>Featured <span class="accent">Rices</span></h2>
+            <p>Desktop setups, documented and versioned.</p>
+        </div>
+        
+        <div class="rice-grid">
+            
+            <article class="rice-card animate-in">
+                
+                <img src="/assets/img/rice/screenshot-01.png" alt="Pop!_OS — Catppuccin Mocha Mauve screenshot" class="rice-card-img">
+                
+                <div class="rice-card-body">
+                    <h3 class="rice-card-title"><a href="/rice-pop-os-catppuccin-mauve.html">Pop!_OS — Catppuccin Mocha Mauve</a></h3>
+                    <div class="rice-card-os">Pop!_OS 22.04 LTS · 2560×1600</div>
+                    <p class="rice-card-summary">A cohesive Catppuccin Mocha Mauve rice on Pop!_OS featuring a translucent Polybar top bar, Conky desktop widgets, patched GNOME Shell CSS for panel transparency, and a Makoto Shinkai-inspired cityscape wallpaper.</p>
+                    <div class="rice-card-tags">
+                        
+                        <span class="tag tag-blue">gnome</span>
+                        
+                        <span class="tag tag-mauve">catppuccin</span>
+                        
+                        <span class="tag tag-green">mauve</span>
+                        
+                        <span class="tag tag-teal">polybar</span>
+                        
+                    </div>
+                    <a href="/rice-pop-os-catppuccin-mauve.html" class="rice-card-link">View Details →</a>
+                </div>
+            </article>
+            
+        </div>
+    </section>
+
+    <!-- Recent Posts -->
+    <section class="container">
+        <div class="section-header">
+            <h2>Latest <span class="accent">Posts</span></h2>
+            <p>Build logs, technical deep-dives, and the occasional hot take.</p>
+        </div>
+        
+        <div class="post-list">
+            
+            <article class="post-card animate-in">
+                <span class="post-card-date">2026-07-11</span>
+                <div>
+                    <h3><a href="/posts-building-static-site-from-scratch.html">Building a Static Site From Scratch — No Frameworks, No Compromise</a></h3>
+                    <p class="post-card-excerpt">Every framework I&#39;ve used for static sites has felt like putting a suit on a ghost. So I built my own. Here&#39;s how.</p>
+                </div>
+            </article>
+            
+            <article class="post-card animate-in">
+                <span class="post-card-date">2026-07-10</span>
+                <div>
+                    <h3><a href="/posts-the-art-of-desktop-ricing.html">The Art of Desktop Ricing — Why It Matters</a></h3>
+                    <p class="post-card-excerpt">It&#39;s not about aesthetics alone. It&#39;s about claiming your digital environment, pixel by deliberate pixel.</p>
+                </div>
+            </article>
+            
+        </div>
+    </section>
+
+   </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Built with zero frameworks. Powered by HTML, CSS & stubbornness.</p>
+            <p style="margin-top: 0.4rem;">© 2026 — Leo Mercer</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="Full resolution screenshot">
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" id="back-to-top" style="opacity:0; pointer-events:none; position:fixed; bottom:2rem; right:2rem; width:40px; height:40px; background:var(--mauve); color:var(--crust); border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:1.2rem; box-shadow:0 4px 16px rgba(203,166,247,0.3); transition:all 0.2s;" title="Back to top">↑</a>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" style="position:fixed; bottom:2rem; right:5rem; width:40px; height:40px; background:var(--mantle); color:var(--text); border:1px solid var(--surface0); border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:1.1rem; transition:all 0.2s;" title="Toggle theme">☀</button>
+
+    <!-- JavaScript -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>
